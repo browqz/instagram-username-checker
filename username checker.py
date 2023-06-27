@@ -1,7 +1,7 @@
 import requests
 
-def is_username_available(username):
-    url = f"https://www.instagram.com/{username}/"
+def disponible(pseudo):
+    url = f"https://www.instagram.com/{pseudo}/"
     response = requests.get(url)
     
     if response.status_code == 404:
@@ -11,7 +11,7 @@ def is_username_available(username):
 
 username = input("Entre le pseudo de ton choix : ")
 
-if is_username_available(username):
+if disponible(username):
     print("Le pseudo est disponible.")
 else:
     print("Le pseudo n'est pas disponible.")
